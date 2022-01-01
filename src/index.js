@@ -2,16 +2,25 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+// const elem = <h2 class='greeting'>Buy Boom!</h2>;
+// const elem = React.createElement('h2', {className: 'greeting'}, 'Buy Boom!');
+
+// многострочная структура в круглых скобках
+// всегда один корневой блок-родитель
+
+const text = 'Buy Boom!';
+const num = 5;
+const elem = (
+    <div>
+      <h2 className={'greeting'}>Buy Boom: {num * 2}</h2>
+      <label htmlFor=""></label>
+      <input type="text" placeholder={'Boom'} />
+      <button tabIndex={0}>Start</button>
+    </div>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDOM.render(
+  elem,
+  document.getElementById('root')
+);
